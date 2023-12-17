@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "nombre": "Pista Alfredo Garbisu - Central",
+      "tipo": "cristal",
+      "disponibilidad": false
+    },
+    {
+      "id": 2,
+      "nombre": "Pista Ignacio Arana",
+      "tipo": "cristal",
+      "disponibilidad": false
+    },
+    {
+      "id": 3,
+      "nombre": "Pista Julio Alegria",
+      "tipo": "cristal",
+      "disponibilidad": false
+    },
+    {
+      "id": 4,
+      "nombre": "Pista Fernando Belasteguin",
+      "tipo": "cristal",
+      "disponibilidad": true
+    },
+    {
+      "id": 5,
+      "nombre": "Pista Mariano Lasaigues",
+      "tipo": "muro",
+      "disponibilidad": true
+    },
+    {
+      "id": 6,
+      "nombre": "Pista Gaby Reca",
+      "tipo": "muro",
+      "disponibilidad": true
+    },
+    {
+      "id": 7,
+      "nombre": "Pista Juan Martin Diaz",
+      "tipo": "muro",
+      "disponibilidad": true
+    }
+  ]

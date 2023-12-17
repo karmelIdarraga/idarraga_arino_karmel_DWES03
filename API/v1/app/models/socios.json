@@ -1,0 +1,23 @@
+[
+    {
+      "id":1,
+      "nombre" : "Iker Arana",
+      "edad": 32,
+      "nivel": 4.5,
+      "antiguedad":1995
+    },
+    {
+      "id":2,
+      "nombre" : "Karmel Idarraga",
+      "edad": 42,
+      "nivel": 3.2,
+      "antiguedad":1997
+    },
+    {
+      "id":3,
+      "nombre" : "Gorka Cengotita",
+      "edad": 34,
+      "nivel": 3.9,
+      "antiguedad":2002
+    }
+  ]

@@ -1,0 +1,80 @@
+[
+    {
+      "id": 101,
+      "id_pista": 1,
+      "fecha": "23/12/2023",
+      "hora_inicio": "14:00",
+      "hora_fin": "16:00",
+      "cliente": 2,
+      "estado": "confirmada",
+      "jugador2":
+      {
+          "nombre" : "Jose Buces",
+          "edad": 44,
+          "nivel": 3.5
+      },
+      "jugador3":
+      {
+          "nombre" : "Koldo Olabarri",
+          "edad": 34,
+          "nivel": 3.7
+      },
+      "jugador4":
+      {
+          "nombre" : "Asier Garabieta",
+          "edad": 44,
+          "nivel": 3.1
+      }
+    },
+    {
+      "id": 102,
+      "id_pista": 2,
+      "fecha": "23/12/2023",
+      "hora_inicio": "18:00",
+      "hora_fin": "19:00",
+      "cliente": 1,
+      "estado": "confirmada",
+      "jugador2":
+      {
+          "nombre" : "Ander Labayru",
+          "edad": 38,
+          "nivel": 4.3
+      },
+      "jugador3":
+      {
+          "nombre" : "Mikel Alonso",
+          "edad": 47,
+          "nivel": 4.7
+      },
+      "jugador4":
+      {
+          "nombre" : "Julen Campos",
+          "edad": 24,
+          "nivel": 4.9
+      }
+    },
+    {
+      "id": 103,
+      "id_pista": 2,
+      "fecha": "23/12/2023",
+      "hora_inicio": "16:00",
+      "hora_fin": "17:00",
+      "cliente": 3,
+      "estado": "pendiente",
+      "jugador2": null,
+      "jugador3":null,
+      "jugador4":null
+    },
+    {
+      "id": 104,
+      "id_pista": 2,
+      "fecha": "23/12/2023",
+      "hora_inicio": "19:00",
+      "hora_fin": "20:00",
+      "cliente": 1,
+      "estado": "pendiente",
+      "jugador2": null,
+      "jugador3":null,
+      "jugador4":null
+    }
+  ]
