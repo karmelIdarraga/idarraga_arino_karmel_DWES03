@@ -20,10 +20,29 @@ class PistasController {
             echo json_encode ($response);
         }else{
             header(CodigosRespuesta::httpHeaderFor(CodigosRespuesta::HTTP_NO_CONTENT));
-            $response = new Response(CodigosRespuesta::HTTP_NO_CONTENT, $this->pistas);
+            $response = new Response(CodigosRespuesta::HTTP_NO_CONTENT, "No se han encontrado pistas");
+            echo json_encode ($response);
+        }        
+    }
+
+    public function getPistaById($id){
+        $pista = null;
+        foreach ($this->pistas as $pistaSel){
+            if ($pistaSel->getId()==$id){
+                $pista = $pistaSel;
+                break;
+            }
+        }
+        if ($pista != null){
+            header(CodigosRespuesta::httpHeaderFor(CodigosRespuesta::HTTP_OK));
+            $response = new Response(CodigosRespuesta::HTTP_OK, $pista );
+            echo json_encode ($response);
+        }else{
+            header(CodigosRespuesta::httpHeaderFor(CodigosRespuesta::HTTP_NO_CONTENT));
+            $response = new Response(CodigosRespuesta::HTTP_NO_CONTENT, "No se ha encontrado pista con id ". $id);
             echo json_encode ($response);
         }
-        
+
     }
 
 }

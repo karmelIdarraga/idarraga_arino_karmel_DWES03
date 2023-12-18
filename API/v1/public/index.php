@@ -2,7 +2,10 @@
 
 require '../core/Router.php';
 require '../app/controllers/PistasController.php';
+require '../app/controllers/ReservasController.php';
 require '../app/models/Pista.php';
+require '../app/models/Reserva.php';
+require '../app/models/Jugador.php';
 require '../app/models/Response.php';
 require '../vendor/CodigosRespuesta.php';
 
@@ -28,27 +31,27 @@ $router->add('/public/pistas/get', array(
 
 $router->add('/public/pistas/get/{id}', array(
     'controller'=>'PistasController',
-    'action'=>'index' 
+    'action'=>'getPistaById' 
 ));
 
-$router->add('/public/reservas/new', array(
-    'controller'=>'Reservas',
-    'action'=>'addReserva' 
+$router->add('/public/reservas/get', array(
+    'controller'=>'ReservasController',
+    'action'=>'getAll' 
 ));
 
-$router->add('/public/reservas/new', array(
-    'controller'=>'Reservas',
+$router->add('/public/reservas/add', array(
+    'controller'=>'ReservasController',
     'action'=>'addReserva' 
 ));
 
 $router->add('/public/reservas/confirmar/{id}', array(
-    'controller'=>'Reservas',
+    'controller'=>'ReservasController',
     'action'=>'confirmarReserva' 
 ));
 
 $router->add('/public/reservas/anular/{id}', array(
-    'controller'=>'Reservas',
-    'action'=>'addReserva' 
+    'controller'=>'ReservasController',
+    'action'=>'deleteReserva' 
 ));
 
 // echo 'router: <pre>';
@@ -116,14 +119,16 @@ if($router->matchRoute($urlArray)){
         $resp = call_user_func_array([$controller, $action], $params);
 
     }else{
-        echo "El método no existe";
+        header(CodigosRespuesta::httpHeaderFor(CodigosRespuesta::HTTP_NOT_IMPLEMENTED));
+        $response = new Response(CodigosRespuesta::HTTP_NOT_IMPLEMENTED, 'Method Not Implemented');
+        echo json_encode ($response);
     }
 
 }else{
-    echo'No route found for URL ' . $url;
+    header(CodigosRespuesta::httpHeaderFor(CodigosRespuesta::HTTP_NOT_FOUND));
+    $response = new Response(CodigosRespuesta::HTTP_NOT_FOUND, 'Path Not Found');
+    echo json_encode ($response);
 }
-
-
 
 // if($router->match($urlArray)){
 //     $controller = $router->getParams()['controller'];

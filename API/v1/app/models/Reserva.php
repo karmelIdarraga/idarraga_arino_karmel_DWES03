@@ -13,7 +13,7 @@ class Reserva implements JsonSerializable{
     private $jugador3;
     private $jugador4;
 
-    function __construct($id, $pista, $hora_inicio, $hora_fin, $cliente, $estado, $jugador2, $jugador3, $jugador4){
+    function __construct($id, $pista,$fecha, $hora_inicio, $hora_fin, $cliente, $estado, $jugador2, $jugador3, $jugador4){
         $this->id = $id;
         $this->pista = $pista;
         $this->fecha = $fecha;
@@ -32,6 +32,10 @@ class Reserva implements JsonSerializable{
 
     public function setEstado ($estado){
         $this->estado = $estado;
+    }
+
+    public function getEstado (){
+        return $this->estado;
     }
 
     public function setJugador2 ($jugador){
