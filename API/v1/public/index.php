@@ -19,10 +19,6 @@ $router->add('/public', array(
     'action'=>'index' 
 ));
 
-// $router->add('/public/post/new', array(
-//     'controller'=>'Post',
-//     'action'=>'new' 
-// ));
 
 $router->add('/public/pistas/get', array(
     'controller'=>'PistasController',
@@ -120,25 +116,16 @@ if($router->matchRoute($urlArray)){
 
     }else{
         header(CodigosRespuesta::httpHeaderFor(CodigosRespuesta::HTTP_NOT_IMPLEMENTED));
-        $response = new Response(CodigosRespuesta::HTTP_NOT_IMPLEMENTED, 'Method Not Implemented');
+        $response = new Response(CodigosRespuesta::HTTP_NOT_IMPLEMENTED, 'Metodo no implementado');
         echo json_encode ($response);
     }
 
 }else{
     header(CodigosRespuesta::httpHeaderFor(CodigosRespuesta::HTTP_NOT_FOUND));
-    $response = new Response(CodigosRespuesta::HTTP_NOT_FOUND, 'Path Not Found');
+    $response = new Response(CodigosRespuesta::HTTP_NOT_FOUND, 'No existe el path solicitado');
     echo json_encode ($response);
 }
 
-// if($router->match($urlArray)){
-//     $controller = $router->getParams()['controller'];
-//     $action=$router->getParams()['action'];
-
-//     $controller = new $controller();
-//     $controller->$action();
-// }else{
-//     echo'No route found for URL ' . $url;
-// }
 
 // echo 'urlParams: <pre>';
 // print_r($urlParams) . '<br>';
